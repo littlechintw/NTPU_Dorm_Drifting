@@ -1,32 +1,69 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar app color="#A569BD" dark>
+      <div class="d-flex align-center">
+        <h1>「漂流」 二手交流活動</h1>
+      </div>
+
+      <!-- <v-spacer></v-spacer>
+
+      <v-btn href="/" icon>
+        <v-icon>home</v-icon>
+      </v-btn>
+
+      <v-btn href="/covid" icon>
+        <v-icon>mdi-database</v-icon>
+      </v-btn>
+
+      <v-btn href="/about" icon>
+        <v-icon>help_outline</v-icon>
+      </v-btn> -->
+    </v-app-bar>
+
+    <v-content>
+      <v-container fluid>
+        <v-row>
+          <v-col cols="12">
+            <v-row align="center" justify="center">
+              <router-view></router-view>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-content>
+
+    <v-footer padless class="font-weight-medium">
+      <v-col class="text-center" cols="12" style="font-size: 14px">
+        &copy; {{ new Date().getFullYear() }} Copyright
+        <a href="https://littlechintw.github.io">littlechintw.github.io</a>. All
+        rights reserved.
+      </v-col>
+    </v-footer>
+  </v-app>
 </template>
 
+<script>
+export default {
+  name: "App",
+  components: {},
+  data: () => ({}),
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+@font-face {
+  font-family: "HunInn";
+  src: url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.eot); /* IE9 Compat Modes */
+  src: url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.eot?#iefix)
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.woff)
+      format("woff"),
+    /* Modern Browsers */
+      url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.ttf)
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.svg#SealmemoryHeader)
+      format("svg"); /* Legacy iOS */
 }
 </style>
